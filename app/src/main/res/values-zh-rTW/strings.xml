@@ -98,7 +98,7 @@
     <string name="test_dns_server">DNS 伺服器:</string>
     <string name="test_result_resolved">解析網址:</string>
     <string name="test_failed">DNS 查詢失敗。逾時或未知的主機。</string>
-    <string name="test_test_domain">google.com</string>
+    <string name="test_test_domain">hackbase</string>
 
     <string name="nav_version">版本:</string>
 

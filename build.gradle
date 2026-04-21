@@ -2,26 +2,22 @@
 
 buildscript {
     repositories {
-        mavenCentral()
         google()
-        maven {
-            url 'https://maven.fabric.io/public'
-        }
+        mavenCentral()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:7.0.4'
+        classpath 'com.android.tools.build:gradle:8.2.2'
         classpath 'com.google.gms:google-services:4.3.10'
-        classpath 'io.fabric.tools:gradle:1.31.0'
     }
 }
 
 allprojects {
     repositories {
-        mavenCentral()
         google()
+        mavenCentral()
     }
 }
 
-task clean(type: Delete) {
+tasks.register("clean", Delete) {
     delete rootProject.buildDir
 }

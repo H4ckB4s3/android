@@ -1,6 +1,6 @@
 # HNS/ENS Android Resolver
 
-A lightweight Android VPN-based DNS resolver for the HNS and ENSecosystem.
+A lightweight Android VPN-based DNS resolver for the HNS and ENS ecosystem.
 
 It routes DNS queries through custom resolvers, allowing you to access HNS/ENS domains directly from your device.
 

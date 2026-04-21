@@ -8,7 +8,7 @@ It routes DNS queries through custom resolvers, allowing you to access HNS/ENS d
 
 ## Features
 
-- Works system-wide (all apps & browsers)
+- Works system-wide (apps & browsers)
 - Default resolver:  
   -> https://github.com/james-stevens/handshake-volume-resolver
 - Support for custom DNS resolvers

@@ -1,90 +1,73 @@
-# iTXTech Daedalus
+# HNS Android Resolver
 
-__No root required Android DNS modifier and Hosts/DNSMasq resolver.__
+A lightweight Android VPN-based DNS resolver for the Handshake (HNS) ecosystem.
 
-## Installations
-* __[Releases](https://github.com/iTXTech/Daedalus/releases)__ - Release signature
-* __[Play Test](https://play.google.com/apps/testing/org.itxtech.daedalus)__ - Release signature
+It routes DNS queries through custom resolvers, allowing you to access Handshake domains directly from your device.
 
-[<img alt='Get it on Google Play'
-      src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png'
-      height="80">](https://play.google.com/store/apps/details?id=org.itxtech.daedalus)
-[<img src="https://fdroid.gitlab.io/artwork/badge/get-it-on.png"
-     alt="Get it on F-Droid"
-     height="80">](https://f-droid.org/packages/org.itxtech.daedalus)
+---
 
-## Useful links
-* __[Telegram](https://t.me/iTXTechDaedalus)__ - Join chat
-* __[Wiki](https://github.com/iTXTech/Daedalus/wiki)__ - Pending update
+## Features
 
-## Introduction
+- Works system-wide (all apps & browsers)
+- Default resolver:  
+  -> https://github.com/james-stevens/handshake-volume-resolver
+- Support for custom DNS resolvers
+- Ability to fetch and resolve Handshake records
+- Quick Settings tile to toggle the VPN بسهولة
 
-This application creates a VPN tunnel to handle all DNS requests.<br>
-<br>
-Features:
-* No root access required, no ads contained
-* Functional under data connection
-* A tester for DNS servers
-* IPv6 support (including Rules!)
-* Custom DNS server
-* Custom hosts and DNSMasq configuration
-* EXTREME LOW power consume
-* Material Design
+---
 
-Supported DNS Query Methods:
-* UDP
-* TCP 
-* DNS over TLS ([RFC7858](https://tools.ietf.org/html/rfc7858))
-* DNS over HTTPS ([RFC8484](https://tools.ietf.org/html/rfc8484))
-* DNS over HTTPS ([Google JSON](https://developers.google.com/speed/public-dns/docs/dns-over-https))
-<br>
+## Usage
 
-__Users must comply with local laws and regulations.__<br>
+1. Install and open the app  
+2. Activate the VPN (via app or Quick Settings tile)  
+3. Open your browser and access HNS domains  
 
-## DNS Server Providers
+ Important:  
+You must type domains like:
 
-* __CuteDNS__ - *Shutdown according to regulations*
-* __[FUN DNS](http://fundns.cn)__ - *Shutdown according to regulations*
-* __[Pure DNS](https://puredns.cn/)__ - *Shutdown according to regulations*
-* __[PdoMo-DNS](https://pdomo.me/)__ - *Shutdown according to regulations*
-* __[rubyfish](https://www.rubyfish.cn)__ - *Free DoT/DoH DNS*
+http://example/ or example/
 
-## Rule Providers
+This ensures the browser treats it as a valid URL and sends the request correctly.
 
-* __[hosts](https://github.com/googlehosts/hosts)__ by *[googlehosts](https://github.com/googlehosts)* - [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)
-* __[yhosts](https://github.com/vokins/yhosts)__ by *[vokins](https://github.com/vokins)* - [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/)
+---
 
-## Requirements
+## Configuration
 
-* Minimum Android version: >= 5.0 (API 21)
-* Recommended Android version: >= 7.1 (API 25) - __*Launcher shortcuts*__
+- You can set your own HNS resolvers in the app
+- Supports switching between resolvers
+- Can fetch records depending on the configured resolver
 
-## Open Source Licenses
+---
 
-* __[ClearEditText](https://github.com/MrFuFuFu/ClearEditText)__ by *[Yuan Fu](https://github.com/MrFuFuFu)* - [APL 2.0](https://github.com/MrFuFuFu/ClearEditText)
-* __[DNS66](https://github.com/julian-klode/dns66)__ by *[Julian Andres Klode](https://github.com/julian-klode)* - [GPLv3](https://github.com/julian-klode/dns66/blob/master/COPYING)
-* __[Pcap4J](https://github.com/kaitoy/pcap4j)__ by *[Kaito Yamada](https://github.com/kaitoy)* - [MIT](https://github.com/kaitoy/pcap4j)
-* __[MiniDNS](https://github.com/MiniDNS/minidns)__ by *[MiniDNS](https://github.com/MiniDNS)* - [APL 2.0](https://github.com/MiniDNS/minidns/blob/master/LICENCE_APACHE)
-* __[Gson](https://github.com/google/gson)__ by *[Google](https://github.com/google)* - [APL 2.0](https://github.com/google/gson/blob/master/LICENSE)
-* __[Shadowsocks](https://github.com/shadowsocks/shadowsocks-android)__ by *[Shadowsocks](https://github.com/shadowsocks)* - [GPLv3](https://github.com/shadowsocks/shadowsocks-android/blob/master/LICENSE)
+## How it works
+
+The app uses Android's `VpnService` to intercept DNS traffic and redirect it to Handshake-compatible resolvers.
+
+---
 
 ## Credits
 
-* __[JetBrains](https://www.jetbrains.com/)__ - For providing free license for [IntelliJ IDEA](https://www.jetbrains.com/idea/)
+This app uses the resolver developed by James Stevens by default.
+
+- Source: https://github.com/james-stevens/handshake-volume-resolver
+
+This project is based on the original **Daedalus** DNS resolver:
+
+- Source: https://github.com/iTXTech/Daedalus
+
+Special thanks to the original authors for their work.
+
+---
+
+## Notes
+
+- Requires VPN permission to function
+- Does not route full traffic — DNS only
+- Some browsers may cache DNS aggressively
+
+---
 
 ## License
 
-    Copyright (C) 2017-2022 iTX Technologies <admin@itxtech.org>
-    
-	This program is free software: you can redistribute it and/or modify
-	it under the terms of the GNU General Public License as published by
-	the Free Software Foundation, either version 3 of the License, or
-	(at your option) any later version.
-
-	This program is distributed in the hope that it will be useful,
-	but WITHOUT ANY WARRANTY; without even the implied warranty of
-	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-	GNU General Public License for more details.
-
-	You should have received a copy of the GNU General Public License
-	along with this program.  If not, see <http://www.gnu.org/licenses/>.
+Check original repository for details.
